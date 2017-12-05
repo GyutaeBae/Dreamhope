@@ -1,3 +1,17 @@
 fskfjsdl;kfj;sdlkfjs;dlkfjsdl;k
 
-int dreamHope;
+float dreamHope;
+
+void draw(){
+ fullScreen();
+}
+
+void setup(){
+
+}
+
+
+dreamHope = 3;
+dreamHope += 0.1;
+
+ellipse(dreamHope, dreamHope, dreamHope, dreamHope);

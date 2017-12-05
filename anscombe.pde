@@ -1,5 +1,6 @@
 Table quartet;
 int quartet_num;
+int hello;
 
 int x_limit_min = 0;
 int x_limit_max = 100;

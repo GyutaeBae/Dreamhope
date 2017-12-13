@@ -14,7 +14,7 @@ Next next;
 Phone phone;
 int currentStage;
 PImage img2, img3_2, img3_13, img3_17, img3_27, img4_4, img4_7, img4_13, img4_18, img4_24, img5_9, img5_15, img5_18, img5_26, img5_29;
-PImage noClick, circle;
+PImage noClick, circle, student1, student2;
 
 void setup() {
   size (1600, 1000);
@@ -54,6 +54,8 @@ void setup() {
   img5_29 = loadImage("5_29.jpg");
   noClick = loadImage("noclick.JPG");
   circle = loadImage("circle.png");
+  student1 = loadImage("student1.jpg");
+  student2 = loadImage("student2.jpg");
 
   clue1_1 = new Clue(608, 771, 775, 830);
   clue1_2 = new Clue(227, 720, 830, 887);
@@ -388,13 +390,16 @@ void draw() {
 
     //School Record_March
   case 16:
+    background(255);
+    image(student1, 400, 0, 800, 1000);
     pencil.show(); 
-
     next.show();
     break;
 
     //School_Record_April
   case 17:
+    background(255);
+    image(student2, 400, 0, 800, 1000);
     pencil.show(); 
     next.show();
     break;
@@ -422,23 +427,31 @@ void mousePressed() {
   println(score);
 
   clicked ++;
-  
+
   image(circle, mouseX, mouseY, 50, 50);
 
   if (button[13].over() && stage == 15) {
     if (stage == 14) {
       stage =  19;
-    } else {
+    } else if (button[4].over() && currentStage == 5 ) {
+      stage = 16;
+    } else if (button[8].over() && currentStage == 9) {
+      stage = 17;
+    }
+    
+    else {
       stage = currentStage +1;
     }
   }
   if (next.over() && stage != 0) {
     stage = 15;
-  }
-
-  if (next.over() && stage == 0) {
+  } else if (next.over() && stage == 0) {
     stage = 1;
-  }
+  } else if (next.over() && stage != 0 && stage == 16) {
+    stage = 5;
+  } else if (next.over() && stage != 0 && stage == 17) {
+    stage = 10;
+  } 
 
 
   if (stage==1) {
@@ -647,7 +660,7 @@ void keyPressed() {
     break;
 
   case 'd':
-    stage = 15;
+    stage = 16;
     break;
 
   case 'f':

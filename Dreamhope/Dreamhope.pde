@@ -20,7 +20,25 @@ PImage img2, img3_2, img3_13, img3_17, img3_27, img4_4, img4_7, img4_13, img4_18
 void setup() {
   size (1600, 1000);
   next = new Next( 1500, 900, 100, 100);
+<<<<<<< HEAD
   button_1 = new Button(loadImage("1-1.jpg"), loadImage("1-2.jpg"));
+=======
+  phone = new Phone(1265, 370);
+  button[0] = new Button(loadImage("1-1.JPG"), loadImage("1-2.JPG"));
+  button[1] = new Button(loadImage("2-1.JPG"), loadImage("2-2.JPG"));
+  button[2] = new Button(loadImage("3-1.JPG"), loadImage("3-2.JPG"));
+  button[3] = new Button(loadImage("4-1.JPG"), loadImage("4-2.JPG"));
+  button[4] = new Button(loadImage("5-1.JPG"), loadImage("5-2.JPG"));
+  button[5] = new Button(loadImage("6-1.JPG"), loadImage("6-2.JPG"));
+  button[6] = new Button(loadImage("7-1.JPG"), loadImage("7-2.JPG"));
+  button[7] = new Button(loadImage("8-1.JPG"), loadImage("8-2.JPG"));
+  button[8] = new Button(loadImage("9-1.JPG"), loadImage("9-2.JPG"));
+  button[9] = new Button(loadImage("10-1.JPG"), loadImage("10-2.JPG"));
+  button[10] = new Button(loadImage("11-1.JPG"), loadImage("11-2.JPG"));
+  button[11] = new Button(loadImage("12-1.JPG"), loadImage("12-2.JPG"));
+  button[12] = new Button(loadImage("13-1.JPG"), loadImage("13-2.JPG"));
+  button[13] = new Button(loadImage("14-1.JPG"), loadImage("14-2.JPG"));
+>>>>>>> parent of e509b62... Merge branch 'master' of https://github.com/GyutaeBae/Dreamhope
   pencil = new Pencil();
   movie = new Movie(this, "bgm.mp4");
    movie.loop();*/

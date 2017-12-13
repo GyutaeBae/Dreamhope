@@ -1,16 +1,13 @@
 import processing.video.*;
 int stage = 0;
 int score = 0;
-<<<<<<< HEAD
+
 Clue clue1_1, clue1_2, clue1_3, clue1_4, clue2_1, clue2_2, clue3_1, clue3_2, clue3_3, clue4_1, clue4_2, clue4_3, clue5_1, clue5_2, clue6_1, clue6_2, clue6_3, clue6_4, clue6_5, 
   clue7_1, clue7_2, clue7_3, clue7_4, clue8_1, clue8_2, clue9_1, clue9_2, clue9_3, clue9_4, clue9_5, clue10_1, clue10_2, clue10_3, clue10_4, clue10_5, clue10_6, clue10_7, clue10_8, 
   clue11_1, clue11_2, clue11_3, clue11_4, clue11_5, clue11_6, clue12_1, clue12_2, clue12_3, clue12_4, clue12_5, clue13_1, clue13_2, clue13_3, clue13_4, clue14_1, clue14_2, clue14_3, clue14_4, clue14_5, clue14_6, clue14_7;
 
-Button button_next;
-=======
-Clue clue1_1, clue1_2;
 Button button_1, button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9, button_10, button_11, button_12, button_13;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
+
 Pencil pencil;
 Movie movie;
 Next next;
@@ -20,10 +17,10 @@ PImage img2, img3_2, img3_13, img3_17, img3_27, img4_4, img4_7, img4_13, img4_18
 void setup() {
   size (1600, 1000);
   next = new Next( 1500, 900, 100, 100);
-  button_1 = new Button(loadImage("1-1.jpg"), loadImage("1-2.jpg"));
+  button_1 = new Button(loadImage("1-1.JPG"), loadImage("1-2.JPG"));
   pencil = new Pencil();
   movie = new Movie(this, "bgm.mp4");
-   movie.loop();*/
+   movie.loop();
   img3_2 = loadImage("3_2.jpg");
   img2 = loadImage("desk.jpg");
   img3_13 = loadImage("3_13.jpg");
@@ -103,7 +100,7 @@ void setup() {
 }
 
 void draw() {
-  println(mouseX, mouseY);
+  println(score);
   switch (stage) {
     // Opening
   case 0:
@@ -113,7 +110,6 @@ void draw() {
      image(movie, 0, 0, width, height);
     pencil.show();
     next.show();
-    button_next.show();
     break;
 
     // March_1
@@ -121,17 +117,13 @@ void draw() {
     background(img3_2);
     pencil.show();
     next.show();
-<<<<<<< HEAD
-    button_next.show();
+
     clue1_1.show(); 
-    clue1_2.show(); 
-    }
-    
+    clue1_2.show();
     clue1_3.show(); 
     clue1_4.show();
-=======
+
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //March_2
@@ -139,12 +131,9 @@ void draw() {
     background(img3_13);
     pencil.show();
     next.show();
-<<<<<<< HEAD
     clue2_1.show(); 
     clue2_2.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //March_3
@@ -152,13 +141,10 @@ void draw() {
     background(img3_17);
     pencil.show(); 
     next.show();
-<<<<<<< HEAD
     clue3_1.show(); 
     clue3_2.show(); 
     clue3_3.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //April_1
@@ -166,13 +152,10 @@ void draw() {
     background(img3_27);
     pencil.show(); 
     next.show();
-<<<<<<< HEAD
     clue4_1.show(); 
     clue4_2.show(); 
     clue4_3.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
   case 5:
@@ -187,15 +170,12 @@ void draw() {
     background(img4_7);
     pencil.show(); 
     next.show();
-<<<<<<< HEAD
     clue6_1.show(); 
     clue6_2.show(); 
     clue6_3.show(); 
     clue6_4.show(); 
     clue6_5.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //April_3
@@ -203,14 +183,11 @@ void draw() {
     background(img4_13);
     pencil.show(); 
     next.show();
-<<<<<<< HEAD
     clue7_1.show(); 
     clue7_2.show(); 
     clue7_3.show(); 
     clue7_4.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //April_4
@@ -218,12 +195,9 @@ void draw() {
     background(img4_18);
     pencil.show(); 
     next.show();
-<<<<<<< HEAD
     clue8_1.show(); 
     clue8_2.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //April_5
@@ -231,15 +205,12 @@ void draw() {
     background(img4_24);
     pencil.show(); 
     next.show();
-<<<<<<< HEAD
     clue9_1.show(); 
     clue9_2.show(); 
     clue9_3.show(); 
     clue9_4.show(); 
     clue9_5.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //May_1
@@ -247,7 +218,6 @@ void draw() {
     background(img5_9);
     pencil.show(); 
     next.show();
-<<<<<<< HEAD
     clue10_1.show(); 
     clue10_2.show(); 
     clue10_3.show(); 
@@ -256,9 +226,7 @@ void draw() {
     clue10_6.show(); 
     clue10_7.show(); 
     clue10_8.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //May_2
@@ -266,16 +234,13 @@ void draw() {
     background(img5_15);
     pencil.show();
     next.show();
-<<<<<<< HEAD
     clue11_1.show(); 
     clue11_2.show(); 
     clue11_3.show(); 
     clue11_4.show(); 
     clue11_5.show(); 
     clue11_6.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //May_3
@@ -283,15 +248,12 @@ void draw() {
     background(img5_18);
     pencil.show(); 
     next.show();
-<<<<<<< HEAD
     clue12_1.show(); 
     clue12_2.show(); 
     clue12_3.show(); 
     clue12_4.show(); 
     clue12_5.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //May_4
@@ -299,21 +261,17 @@ void draw() {
     background(img5_26);
     pencil.show(); 
     next.show();
-<<<<<<< HEAD
     clue13_1.show(); 
     clue13_2.show(); 
     clue13_3.show(); 
     clue13_4.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //May_5
   case 14:
     background(img5_29);
     pencil.show(); 
-<<<<<<< HEAD
     next.show();
     clue14_1.show(); 
     clue14_2.show(); 
@@ -322,18 +280,15 @@ void draw() {
     clue14_5.show(); 
     clue14_6.show(); 
     clue14_7.show();
-=======
     currentStage = stage;
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;   
 
 
     //Teacher's Desk
   case 15:
     background(img2);
-    button_"currentStage".show();
+
     pencil.show(); 
-<<<<<<< HEAD
 
 
     break;
@@ -341,15 +296,7 @@ void draw() {
     //School Record_March
   case 16:
     pencil.show(); 
-=======
     next.show();
-    break;
-
-    //School Record_March
-  case 15:
-    pencil.show();
-    next.show();
->>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //School_Record_April
@@ -376,6 +323,7 @@ void draw() {
   }
 }
 
+
 void mousePressed() {
   if (button_1.over()) {
     if (stage == 14) {
@@ -387,6 +335,200 @@ void mousePressed() {
 
   if (next.over()) {
     stage = 15;
+  }
+
+  if (stage==1) {
+    if ((clue1_1.over()||clue1_2.over())&&clue1_1.clicked==false&&clue1_2.clicked==false) {
+      score+=1;
+      clue1_1.clicked=true; 
+      clue1_2.clicked=true;
+    }
+    if ((clue1_3.over()||clue1_4.over())&&clue1_3.clicked==false&&clue1_4.clicked==false) {
+      score+=2;
+      clue1_3.clicked=true; 
+      clue1_4.clicked=true;
+    }
+  }
+  if (stage==2) {
+    if ((clue2_1.over()||clue2_2.over())&&clue2_1.clicked==false&&clue2_2.clicked==false) {
+      score+=2;
+      clue2_1.clicked=true; 
+      clue2_2.clicked = true;
+    }
+  }
+  if (stage==3) {
+    if ((clue3_1.over()||clue3_2.over())&&clue3_1.clicked==false&&clue3_2.clicked==false) {
+      score +=2;
+      clue3_1.clicked=true; 
+      clue3_2.clicked=true;
+    }
+    if (clue3_3.over()&&clue3_3.clicked==false) {
+      score+=2; 
+      clue3_3.clicked=true;
+    }
+  }
+  if (stage==4) {
+    if ((clue4_1.over()||clue4_2.over())&&clue4_1.clicked==false&&clue4_2.clicked==false) {
+      score += 2;
+      clue4_1.clicked=true; 
+      clue4_2.clicked=true;
+    }
+    if (clue4_3.over()&&clue4_3.clicked==false) {
+      score +=3; 
+      clue4_3.clicked=true;
+    }
+  }
+  if (stage==5) {
+    if ((clue5_1.over()||clue5_2.over())&&clue5_1.clicked==false&&clue5_2.clicked==false) {
+      score+=2;
+      clue5_1.clicked = true; 
+      clue5_2.clicked = true;
+    }
+  }
+  if (stage==6) {
+    if (clue6_1.over()&&clue6_1.clicked==false) {
+      score+=3; 
+      clue6_1.clicked=true;
+    }
+    if ((clue6_2.over()||clue6_3.over())&&clue6_2.clicked==false&&clue6_3.clicked==false) {
+      score +=3;
+      clue6_2.clicked=true; 
+      clue6_3.clicked=true;
+    }
+    if (clue6_4.over()&&clue6_4.clicked==false) {
+      score+=2; 
+      clue6_4.clicked=true;
+    }
+    if (clue6_5.over()&&clue6_5.clicked==false) {
+      score+=4; 
+      clue6_5.clicked=true;
+    }
+  }
+  if (stage==7) {
+    if ((clue7_1.over()||clue7_2.over())&&clue7_1.clicked==false&&clue7_2.clicked==false) {
+      score+=2;
+      clue7_1.clicked=true; 
+      clue7_2.clicked=true;
+    }
+    if (clue7_3.over()&&clue7_3.clicked==false) {
+      score+=1;
+      clue7_3.clicked=true;
+    }
+    if (clue7_4.over()&&clue7_4.clicked==false) {
+      score+=3; 
+      clue7_4.clicked=true;
+    }
+  }
+  if (stage==8) {
+    if (clue8_1.over()&&clue8_1.clicked==false) {
+      score+=1; 
+      clue8_1.clicked=true;
+    }
+    if (clue8_2.over()&&clue8_2.clicked==false) {
+      score+=3;
+      clue8_2.clicked=true;
+    }
+  }
+  if (stage==9) {
+    if ((clue9_1.over()||clue9_2.over())&&clue9_1.clicked==false&&clue9_2.clicked==false) {
+      score+=2;
+      clue9_1.clicked=true; 
+      clue9_2.clicked=true;
+    }
+    if ((clue9_3.over()||clue9_4.over()||clue9_5.over())&&clue9_3.clicked==false&&clue9_4.clicked==false&&clue9_5.clicked==false) {
+      score+=4;
+      clue9_3.clicked=true; 
+      clue9_4.clicked=true; 
+      clue9_5.clicked=true;
+    }
+  }
+  if (stage==10) {
+    if ((clue10_1.over()||clue10_2.over()||clue10_3.over()||clue10_4.over())&&clue10_1.clicked==false&&clue10_2.clicked==false&&clue10_3.clicked==false&&clue10_4.clicked==false) {
+      score +=2;
+      clue10_1.clicked=true; 
+      clue10_2.clicked=true; 
+      clue10_3.clicked=true; 
+      clue10_4.clicked=true;
+    }
+    if ((clue10_5.over()||clue10_6.over()||clue10_7.over())&&clue10_5.clicked==false&&clue10_6.clicked==false&& clue10_7.clicked==false) {
+      score+=1;
+      clue10_5.clicked=true; 
+      clue10_6.clicked=true; 
+      clue10_7.clicked=true;
+    }
+    if (clue10_8.over()&&clue10_8.clicked==false) {
+      score +=1;
+      clue10_8.clicked=true;
+    }
+  }
+  if (stage==11) {
+    if ((clue11_1.over()||clue11_2.over())&&clue11_1.clicked==false&&clue11_2.clicked==false) {
+      score+=1;
+      clue11_1.clicked=true; 
+      clue11_2.clicked=true; 
+    }
+    if ((clue11_3.over()||clue11_4.over())&&clue11_3.clicked==false&&clue11_4.clicked==false) {
+      score+=1;
+      clue11_3.clicked=true; 
+      clue11_4.clicked=true;
+    }
+    if ((clue11_5.over()||clue11_6.over())&&clue11_5.clicked==false&&clue11_6.clicked==false) {
+      score+=2;
+      clue11_5.clicked=true; 
+      clue11_6.clicked=true;
+    }
+  }
+  if (stage==12) {
+    if (clue12_1.over()&&clue12_1.clicked==false) {
+      score+=4;
+      clue12_1.clicked=true;
+    }
+    if (clue12_2.over()&&clue12_2.clicked==false) {
+      score+=2; 
+      clue12_2.clicked=true;
+    }
+    if ((clue12_3.over()||clue12_4.over())&&clue12_3.clicked==false&&clue12_4.clicked==false) {
+      score+=2;
+      clue12_3.clicked=true; 
+      clue12_4.clicked=true;
+    }
+    if (clue12_5.over()&&clue12_5.clicked==false) {
+      score+=1;
+      clue12_5.clicked=true;
+    }
+  }
+  if (stage==13) {
+    if ((clue13_1.over()||clue13_2.over())&&clue13_1.clicked==false&&clue13_2.clicked==false) {
+      score+=2;
+      clue13_1.clicked=true; 
+      clue13_2.clicked=true;
+    }
+    if ((clue13_3.over()||clue13_4.over())&&clue13_3.clicked==false&&clue13_4.clicked==false) {
+      score+=2;
+      clue13_3.clicked=true; 
+      clue13_4.clicked=true;
+    }
+  }
+  if (stage==14) {
+    if ((clue14_1.over()||clue14_2.over())&&clue14_1.clicked==false&&clue14_2.clicked==false) {
+      score+=1;
+      clue14_1.clicked=true; 
+      clue14_2.clicked=true;
+    }
+    if ((clue14_3.over()||clue14_4.over())&&clue14_3.clicked==false&&clue14_4.clicked==false) {
+      score+=2;
+      clue14_3.clicked=true; 
+      clue14_4.clicked=true;
+    }
+    if(clue14_5.over()&&clue14_5.clicked==false){
+    score+=1;
+    clue14_5.clicked=true;
+    }
+    if((clue14_6.over()&&clue14_7.over())&&clue14_6.clicked==false&&clue14_7.clicked==false){
+    score+=1;
+    clue14_6.clicked=true;
+    clue14_7.clicked=true;
+    }
   }
 }
 

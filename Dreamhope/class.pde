@@ -2,12 +2,14 @@ class Clue {
   int rectX1, rectY1;
   int rectX2, rectY2;
   int score;
+  boolean clicked;
   
 Clue(int x1, int x2, int y1, int y2) {
     rectX1 = x1;
     rectY1 = y1;
     rectX2 = x2;
     rectY2 = y2;
+    clicked = false;
   }
 
   void show() {
@@ -23,5 +25,6 @@ Clue(int x1, int x2, int y1, int y2) {
       return false;
     }
   }
+
   
 }

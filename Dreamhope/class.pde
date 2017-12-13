@@ -1,24 +1,23 @@
 class Clue {
-  int rectX, rectY;
-  int rectWidth, rectHeight;
+  int rectX1, rectY1;
+  int rectX2, rectY2;
   int score;
   
-  Clue(int x, int y, int w, int h, int s) {
-    rectX = x;
-    rectY = y;
-    rectWidth = w;
-    rectHeight = h;
-    score = s;
+Clue(int x1, int x2, int y1, int y2) {
+    rectX1 = x1;
+    rectY1 = y1;
+    rectX2 = x2;
+    rectY2 = y2;
   }
 
   void show() {
     noStroke();
-    noFill();
-    rect(rectX, rectY, rectWidth, rectHeight);    
+    fill(255, 255, 255, 150);
+    rect(rectX1, rectY1, rectX2-rectX1, rectY2-rectY1);    
   }
   
   boolean over() {
-    if (mouseX > rectX && mouseY > rectY && mouseX < rectX+rectWidth && mouseY < rectY+rectHeight) {
+    if (mouseX > rectX1 && mouseY > rectY1 && mouseX < rectX2 && mouseY < rectY2) {
       return true;
     } else {
       return false;

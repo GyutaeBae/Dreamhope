@@ -1,40 +1,29 @@
 import processing.video.*;
 int stage = 0;
 int score = 0;
-
-Button[] button = new Button[14];
-
+<<<<<<< HEAD
 Clue clue1_1, clue1_2, clue1_3, clue1_4, clue2_1, clue2_2, clue3_1, clue3_2, clue3_3, clue4_1, clue4_2, clue4_3, clue5_1, clue5_2, clue6_1, clue6_2, clue6_3, clue6_4, clue6_5, 
   clue7_1, clue7_2, clue7_3, clue7_4, clue8_1, clue8_2, clue9_1, clue9_2, clue9_3, clue9_4, clue9_5, clue10_1, clue10_2, clue10_3, clue10_4, clue10_5, clue10_6, clue10_7, clue10_8, 
   clue11_1, clue11_2, clue11_3, clue11_4, clue11_5, clue11_6, clue12_1, clue12_2, clue12_3, clue12_4, clue12_5, clue13_1, clue13_2, clue13_3, clue13_4, clue14_1, clue14_2, clue14_3, clue14_4, clue14_5, clue14_6, clue14_7;
+
+Button button_next;
+=======
+Clue clue1_1, clue1_2;
+Button button_1, button_2, button_3, button_4, button_5, button_6, button_7, button_8, button_9, button_10, button_11, button_12, button_13;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
 Pencil pencil;
 Movie movie;
 Next next;
-Phone phone;
 int currentStage;
 PImage img2, img3_2, img3_13, img3_17, img3_27, img4_4, img4_7, img4_13, img4_18, img4_24, img5_9, img5_15, img5_18, img5_26, img5_29;
 
 void setup() {
   size (1600, 1000);
   next = new Next( 1500, 900, 100, 100);
-  phone = new Phone(1265, 370);
-  button[0] = new Button(loadImage("1-1.JPG"), loadImage("1-2.JPG"));
-  button[1] = new Button(loadImage("2-1.JPG"), loadImage("2-2.JPG"));
-  button[2] = new Button(loadImage("3-1.JPG"), loadImage("3-2.JPG"));
-  button[3] = new Button(loadImage("4-1.JPG"), loadImage("4-2.JPG"));
-  button[4] = new Button(loadImage("5-1.JPG"), loadImage("5-2.JPG"));
-  button[5] = new Button(loadImage("6-1.JPG"), loadImage("6-2.JPG"));
-  button[6] = new Button(loadImage("7-1.JPG"), loadImage("7-2.JPG"));
-  button[7] = new Button(loadImage("8-1.JPG"), loadImage("8-2.JPG"));
-  button[8] = new Button(loadImage("9-1.JPG"), loadImage("9-2.JPG"));
-  button[9] = new Button(loadImage("10-1.JPG"), loadImage("10-2.JPG"));
-  button[10] = new Button(loadImage("11-1.JPG"), loadImage("11-2.JPG"));
-  button[11] = new Button(loadImage("12-1.JPG"), loadImage("12-2.JPG"));
-  button[12] = new Button(loadImage("13-1.JPG"), loadImage("13-2.JPG"));
-  button[13] = new Button(loadImage("14-1.JPG"), loadImage("14-2.JPG"));
+  button_1 = new Button(loadImage("1-1.jpg"), loadImage("1-2.jpg"));
   pencil = new Pencil();
   movie = new Movie(this, "bgm.mp4");
-  movie.loop();
+   movie.loop();*/
   img3_2 = loadImage("3_2.jpg");
   img2 = loadImage("desk.jpg");
   img3_13 = loadImage("3_13.jpg");
@@ -119,11 +108,12 @@ void draw() {
     // Opening
   case 0:
     if (movie.available() ) {
-      movie.read();
-    }
-    image(movie, 0, 0, width, height);
+     movie.read();
+     }
+     image(movie, 0, 0, width, height);
     pencil.show();
     next.show();
+    button_next.show();
     break;
 
     // March_1
@@ -131,11 +121,17 @@ void draw() {
     background(img3_2);
     pencil.show();
     next.show();
+<<<<<<< HEAD
+    button_next.show();
     clue1_1.show(); 
-    clue1_2.show();
+    clue1_2.show(); 
+    }
+    
     clue1_3.show(); 
     clue1_4.show();
-    currentStage = 1;
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //March_2
@@ -143,10 +139,12 @@ void draw() {
     background(img3_13);
     pencil.show();
     next.show();
+<<<<<<< HEAD
     clue2_1.show(); 
     clue2_2.show();
-    currentStage = 2;
-
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //March_3
@@ -154,12 +152,13 @@ void draw() {
     background(img3_17);
     pencil.show(); 
     next.show();
-
+<<<<<<< HEAD
     clue3_1.show(); 
     clue3_2.show(); 
     clue3_3.show();
-    currentStage = 3;
-
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //April_1
@@ -167,10 +166,13 @@ void draw() {
     background(img3_27);
     pencil.show(); 
     next.show();
+<<<<<<< HEAD
     clue4_1.show(); 
     clue4_2.show(); 
     clue4_3.show();
-    currentStage = 4;
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
   case 5:
@@ -179,23 +181,21 @@ void draw() {
     next.show();
     clue5_1.show(); 
     clue5_2.show();
-    currentStage = 5;
-    break;
 
     //April_2
   case 6:
     background(img4_7);
     pencil.show(); 
     next.show();
-
+<<<<<<< HEAD
     clue6_1.show(); 
     clue6_2.show(); 
     clue6_3.show(); 
     clue6_4.show(); 
     clue6_5.show();
-
-    currentStage = 6;
-
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //April_3
@@ -203,14 +203,14 @@ void draw() {
     background(img4_13);
     pencil.show(); 
     next.show();
-
+<<<<<<< HEAD
     clue7_1.show(); 
     clue7_2.show(); 
     clue7_3.show(); 
     clue7_4.show();
-
-    currentStage = 7;
-
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //April_4
@@ -218,12 +218,12 @@ void draw() {
     background(img4_18);
     pencil.show(); 
     next.show();
-
+<<<<<<< HEAD
     clue8_1.show(); 
     clue8_2.show();
-
-    currentStage = 8;
-
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //April_5
@@ -231,15 +231,15 @@ void draw() {
     background(img4_24);
     pencil.show(); 
     next.show();
-
+<<<<<<< HEAD
     clue9_1.show(); 
     clue9_2.show(); 
     clue9_3.show(); 
     clue9_4.show(); 
     clue9_5.show();
-
-    currentStage = 9;
-
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //May_1
@@ -247,7 +247,7 @@ void draw() {
     background(img5_9);
     pencil.show(); 
     next.show();
-
+<<<<<<< HEAD
     clue10_1.show(); 
     clue10_2.show(); 
     clue10_3.show(); 
@@ -256,9 +256,9 @@ void draw() {
     clue10_6.show(); 
     clue10_7.show(); 
     clue10_8.show();
-
-    currentStage = 10;
-
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //May_2
@@ -266,16 +266,16 @@ void draw() {
     background(img5_15);
     pencil.show();
     next.show();
-
+<<<<<<< HEAD
     clue11_1.show(); 
     clue11_2.show(); 
     clue11_3.show(); 
     clue11_4.show(); 
     clue11_5.show(); 
     clue11_6.show();
-
-    currentStage = 11;
-
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //May_3
@@ -283,14 +283,15 @@ void draw() {
     background(img5_18);
     pencil.show(); 
     next.show();
+<<<<<<< HEAD
     clue12_1.show(); 
     clue12_2.show(); 
     clue12_3.show(); 
     clue12_4.show(); 
     clue12_5.show();
-
-    currentStage = 12;
-
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //May_4
@@ -298,19 +299,21 @@ void draw() {
     background(img5_26);
     pencil.show(); 
     next.show();
+<<<<<<< HEAD
     clue13_1.show(); 
     clue13_2.show(); 
     clue13_3.show(); 
     clue13_4.show();
-    currentStage = 13;
-
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //May_5
   case 14:
     background(img5_29);
     pencil.show(); 
-
+<<<<<<< HEAD
     next.show();
     clue14_1.show(); 
     clue14_2.show(); 
@@ -319,24 +322,34 @@ void draw() {
     clue14_5.show(); 
     clue14_6.show(); 
     clue14_7.show();
-    currentStage = 14;
+=======
+    currentStage = stage;
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;   
 
 
     //Teacher's Desk
-
   case 15:
     background(img2);
-    button[currentStage-1].show();
-    phone.show();
+    button_"currentStage".show();
     pencil.show(); 
+<<<<<<< HEAD
+
+
     break;
 
     //School Record_March
   case 16:
     pencil.show(); 
-
+=======
     next.show();
+    break;
+
+    //School Record_March
+  case 15:
+    pencil.show();
+    next.show();
+>>>>>>> fb7cf4ea077d3b64ad8722b578d9d20b70e28437
     break;
 
     //School_Record_April
@@ -363,15 +376,15 @@ void draw() {
   }
 }
 
-
 void mousePressed() {
-  if (button[13].over() && stage == 15) {
+  if (button_1.over()) {
     if (stage == 14) {
       stage =  19;
     } else {
       stage = currentStage +1;
     }
   }
+
   if (next.over()) {
     stage = 15;
   }

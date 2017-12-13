@@ -45,7 +45,7 @@ class Next {
     arrow =  loadImage("arrow.png");
     pushMatrix();
     translate(arrowX, arrowY);
-    rotate(PI/2);
+    rotate(PI/4);
     popMatrix();
     image(arrow, arrowX, arrowY, arrowWidth, arrowHeight);
   }

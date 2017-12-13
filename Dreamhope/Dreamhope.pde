@@ -10,7 +10,7 @@ PImage img2, img3_2, img3_13, img3_17, img3_27, img4_4, img4_7, img4_13, img4_18
 
 void setup() {
   size (1600, 1000);
-  next = new Next( 1500, 950, 100, 50);
+  next = new Next( 1500, 900, 100, 100);
   button_next = new Button(550, 850, 50, 30, "다음");
   pencil = new Pencil();
   movie = new Movie(this, "bgm.mp4");

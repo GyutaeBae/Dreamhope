@@ -1,7 +1,12 @@
 import processing.video.*;
+import processing.sound.*;
 int score = 0;
 int stage = 0;
 int clicked = 0;
+boolean endMonth3 = false;
+boolean endMonth4 = false;
+boolean call =  false;
+SoundFile bgm;
 
 Button[] button = new Button[15];
 
@@ -14,12 +19,17 @@ Next next;
 Phone phone;
 int currentStage;
 PImage img2, img3_2, img3_13, img3_17, img3_27, img4_4, img4_7, img4_13, img4_18, img4_24, img5_9, img5_15, img5_18, img5_26, img5_29;
-<<<<<<< HEAD
-PImage noClick, circle, student1, student2;
-=======
+
+PImage student1, student2, badend, happyend;
+
+PImage noClick;
+Circle[] circle = new Circle[0];
+Circle newCircle;
+
 
 void setup() {
   size (1600, 1000);
+  bgm = new SoundFile(this, "bgm.mp3");
   next = new Next(1500, 900, 100, 100);
   phone = new Phone(1200, 270);
   button[1] = new Button(loadImage("1-1.JPG"), loadImage("1-2.JPG"));
@@ -37,6 +47,8 @@ void setup() {
   button[13] = new Button(loadImage("13-1.JPG"), loadImage("13-2.JPG"));
   button[14] = new Button(loadImage("14-1.JPG"), loadImage("14-2.JPG"));
   pencil = new Pencil();
+  movie = new Movie(this, "bgm.mp4");
+  movie.loop();
   img3_2 = loadImage("3_2.jpg");
   img2 = loadImage("desk.jpg");
   img3_13 = loadImage("3_13.jpg");
@@ -53,13 +65,10 @@ void setup() {
   img5_26 = loadImage("5_26.jpg");
   img5_29 = loadImage("5_29.jpg");
   noClick = loadImage("noclick.JPG");
-<<<<<<< HEAD
-  circle = loadImage("circle.png");
   student1 = loadImage("student1.jpg");
   student2 = loadImage("student2.jpg");
-=======
->>>>>>> b30677499e92da1bd927b92f60f491783ddb1900
-
+  badend = loadImage("badend.jpg");
+  happyend = loadImage("happyend.jpg");
   clue1_1 = new Clue(608, 771, 775, 830);
   clue1_2 = new Clue(227, 720, 830, 887);
   clue1_3 = new Clue(1065, 1393, 252, 310);
@@ -126,6 +135,10 @@ void draw() {
   switch (stage) {
     // Opening
   case 0:
+    if (movie.available() ) {
+      movie.read();
+    }
+    image(movie, 0, 0, width, height);
     pencil.show();
     next.show();
     currentStage = 0;
@@ -290,11 +303,11 @@ void draw() {
     //May_5
   case 14:
     background(img5_29);
+
+    pencil.show(); 
     if (clicked >11) {
       image(noClick, 500, 300, 600, 200);
     }
-    pencil.show(); 
-
     next.show();
     currentStage = 14;
     break;   
@@ -303,22 +316,37 @@ void draw() {
     //Teacher's Desk
 
   case 15:
-  circle = new Circle[0];
+    circle = new Circle[0];
     background(img2);
     clicked = 0;
     if (currentStage >0) {
       button[currentStage].show();
     }
-    if (currentStage > 4) {
-      phone.call();
+    if (currentStage > 4 && currentStage<10) {
+      if (score>29) {      
+        phone.call();
+        call = true;
+      }
+    } else if (currentStage>=10 && currentStage <15) {
+      if (score>42) {
+        phone.call();
+        call = true;
+      }
     } else {
       phone.show();
     }
+    if (currentStage == 4) {
+      endMonth3 = true;
+    } else if ( currentStage  == 9 ) {
+      endMonth4 = true;
+    }
+
     pencil.show(); 
     break;
 
     //School Record_March
-  case 16:
+  case 16:    
+    circle = new Circle[0];
     background(255);
     image(student1, 400, 0, 800, 1000);
     pencil.show(); 
@@ -326,7 +354,8 @@ void draw() {
     break;
 
     //School_Record_April
-  case 17:
+  case 17:    
+    circle = new Circle[0];
     background(255);
     image(student2, 400, 0, 800, 1000);
     pencil.show(); 
@@ -341,15 +370,19 @@ void draw() {
 
     //Happy Ending
   case 19:
+    circle = new Circle[0];
+    image(happyend, 0, 0, width, height);
     pencil.show(); 
     break;
 
     //Sad Ending
   case 20:
+    circle = new Circle[0];
+    image(badend, 0, 0, width, height);
     pencil.show(); 
     break;
   }
-  for (int i = 0; i<circle.length; i++) {
+  for (int i = 1; i<circle.length; i++) {
     circle[i].display();
   }
 }
@@ -358,40 +391,68 @@ void draw() {
 void mousePressed() {
 
   println(score);
+  println(currentStage);
+  println(button[4].over());
 
   clicked ++;
-<<<<<<< HEAD
 
-  image(circle, mouseX, mouseY, 50, 50);
-=======
+
   newCircle = new Circle(mouseX, mouseY);
   circle = (Circle[])append(circle, newCircle);
 
->>>>>>> b30677499e92da1bd927b92f60f491783ddb1900
-
   if (button[13].over() && stage == 15) {
-    if (stage == 14) {
-      stage =  19;
-    } else if (button[4].over() && currentStage == 5 ) {
-      stage = 16;
-    } else if (button[8].over() && currentStage == 9) {
-      stage = 17;
-    }
-    
-    else {
+    if (currentStage == 14) {
+      stage =  20;
+    } else {
       stage = currentStage +1;
     }
   }
+
+  if (button[4].over() && endMonth3) {
+    stage = 16;
+    endMonth3 = false;
+  }
+
+  if (button[9].over() && endMonth4) {
+    stage = 17;
+    endMonth4 = false;
+  }
+
   if (next.over() && stage != 0) {
-    stage = 15;
+    if (stage == 16) {
+      stage = 5;
+    } else if (stage ==  17) {
+      stage = 10;
+    } else {
+      stage = 15;
+    }
   } else if (next.over() && stage == 0) {
     stage = 1;
-  } else if (next.over() && stage != 0 && stage == 16) {
-    stage = 5;
-  } else if (next.over() && stage != 0 && stage == 17) {
-    stage = 10;
+    movie.stop();
+    bgm.play();
+    bgm.stop();
+    bgm.loop();
   } 
 
+  if (next.over()) {
+    if (currentStage == 6) {
+      if (score <14) {
+        stage = 20;
+      }
+    } else if (currentStage == 9) {
+      if (score<22) {
+        stage = 20;
+      }
+    } else if (currentStage == 11) {
+      if (score<26) {
+        stage = 20;
+      }
+    } else if (currentStage == 14) {
+      if (score <36) {
+        stage = 20;
+      }
+    }
+  }
 
   if (stage==1) {
     if ((clue1_1.over()||clue1_2.over())&&clue1_1.clicked==false&&clue1_2.clicked==false) {
@@ -599,10 +660,13 @@ void keyPressed() {
     break;
 
   case 'd':
-    stage = 16;
+    stage = 15;
     break;
 
   case 'f':
     stage ++;
+
+  case 'g':
+    stage = 20;
   }
 }

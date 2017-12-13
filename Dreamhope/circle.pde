@@ -10,6 +10,6 @@ class Circle {
   }
 
   void display() {
-    image(circle, xPos-25, yPos-25, 50, 50);
+    image(circle, xPos-25, yPos-25, 70, 70);
   }
 }

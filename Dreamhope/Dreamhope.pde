@@ -14,7 +14,9 @@ Next next;
 Phone phone;
 int currentStage;
 PImage img2, img3_2, img3_13, img3_17, img3_27, img4_4, img4_7, img4_13, img4_18, img4_24, img5_9, img5_15, img5_18, img5_26, img5_29;
+<<<<<<< HEAD
 PImage noClick, circle, student1, student2;
+=======
 
 void setup() {
   size (1600, 1000);
@@ -35,8 +37,6 @@ void setup() {
   button[13] = new Button(loadImage("13-1.JPG"), loadImage("13-2.JPG"));
   button[14] = new Button(loadImage("14-1.JPG"), loadImage("14-2.JPG"));
   pencil = new Pencil();
-  movie = new Movie(this, "bgm.mp4");
-  movie.loop();
   img3_2 = loadImage("3_2.jpg");
   img2 = loadImage("desk.jpg");
   img3_13 = loadImage("3_13.jpg");
@@ -53,9 +53,12 @@ void setup() {
   img5_26 = loadImage("5_26.jpg");
   img5_29 = loadImage("5_29.jpg");
   noClick = loadImage("noclick.JPG");
+<<<<<<< HEAD
   circle = loadImage("circle.png");
   student1 = loadImage("student1.jpg");
   student2 = loadImage("student2.jpg");
+=======
+>>>>>>> b30677499e92da1bd927b92f60f491783ddb1900
 
   clue1_1 = new Clue(608, 771, 775, 830);
   clue1_2 = new Clue(227, 720, 830, 887);
@@ -123,10 +126,6 @@ void draw() {
   switch (stage) {
     // Opening
   case 0:
-    if (movie.available() ) {
-      movie.read();
-    }
-    image(movie, 0, 0, width, height);
     pencil.show();
     next.show();
     currentStage = 0;
@@ -140,10 +139,6 @@ void draw() {
       image(noClick, 500, 300, 600, 200);
     }
     next.show();
-    clue1_1.show(); 
-    clue1_2.show();
-    clue1_3.show(); 
-    clue1_4.show();
     currentStage = 1;
 
     break;
@@ -151,13 +146,12 @@ void draw() {
     //March_2
   case 2:
     background(img3_13);
+
     if (clicked >11) {
       image(noClick, 500, 300, 600, 200);
     }
     pencil.show();
     next.show();
-    clue2_1.show(); 
-    clue2_2.show();
     currentStage = 2;
 
     break;
@@ -165,15 +159,12 @@ void draw() {
     //March_3
   case 3:
     background(img3_17);
+
     if (clicked >11) {
       image(noClick, 500, 300, 600, 200);
     }
     pencil.show(); 
     next.show();
-
-    clue3_1.show(); 
-    clue3_2.show(); 
-    clue3_3.show();
     currentStage = 3;
 
     break;
@@ -181,14 +172,12 @@ void draw() {
     //April_1
   case 4:
     background(img3_27);
+
     if (clicked >11) {
       image(noClick, 500, 300, 600, 200);
     }
     pencil.show(); 
     next.show();
-    clue4_1.show(); 
-    clue4_2.show(); 
-    clue4_3.show();
     currentStage = 4;
     break;
 
@@ -199,8 +188,6 @@ void draw() {
     }
     pencil.show(); 
     next.show();
-    clue5_1.show(); 
-    clue5_2.show();
     currentStage = 5;
     break;
 
@@ -212,13 +199,6 @@ void draw() {
     }
     pencil.show(); 
     next.show();
-
-    clue6_1.show(); 
-    clue6_2.show(); 
-    clue6_3.show(); 
-    clue6_4.show(); 
-    clue6_5.show();
-
     currentStage = 6;
 
     break;
@@ -231,12 +211,6 @@ void draw() {
     }
     pencil.show(); 
     next.show();
-
-    clue7_1.show(); 
-    clue7_2.show(); 
-    clue7_3.show(); 
-    clue7_4.show();
-
     currentStage = 7;
 
     break;
@@ -249,10 +223,6 @@ void draw() {
     }
     pencil.show(); 
     next.show();
-
-    clue8_1.show(); 
-    clue8_2.show();
-
     currentStage = 8;
 
     break;
@@ -265,13 +235,6 @@ void draw() {
     }
     pencil.show(); 
     next.show();
-
-    clue9_1.show(); 
-    clue9_2.show(); 
-    clue9_3.show(); 
-    clue9_4.show(); 
-    clue9_5.show();
-
     currentStage = 9;
 
     break;
@@ -284,16 +247,6 @@ void draw() {
     }
     pencil.show(); 
     next.show();
-
-    clue10_1.show(); 
-    clue10_2.show(); 
-    clue10_3.show(); 
-    clue10_4.show(); 
-    clue10_5.show(); 
-    clue10_6.show(); 
-    clue10_7.show(); 
-    clue10_8.show();
-
     currentStage = 10;
 
     break;
@@ -306,14 +259,6 @@ void draw() {
     }
     pencil.show();
     next.show();
-
-    clue11_1.show(); 
-    clue11_2.show(); 
-    clue11_3.show(); 
-    clue11_4.show(); 
-    clue11_5.show(); 
-    clue11_6.show();
-
     currentStage = 11;
 
     break;
@@ -326,12 +271,6 @@ void draw() {
     }
     pencil.show(); 
     next.show();
-    clue12_1.show(); 
-    clue12_2.show(); 
-    clue12_3.show(); 
-    clue12_4.show(); 
-    clue12_5.show();
-
     currentStage = 12;
 
     break;
@@ -344,10 +283,6 @@ void draw() {
     }
     pencil.show(); 
     next.show();
-    clue13_1.show(); 
-    clue13_2.show(); 
-    clue13_3.show(); 
-    clue13_4.show();
     currentStage = 13;
 
     break;
@@ -361,13 +296,6 @@ void draw() {
     pencil.show(); 
 
     next.show();
-    clue14_1.show(); 
-    clue14_2.show(); 
-    clue14_3.show(); 
-    clue14_4.show(); 
-    clue14_5.show(); 
-    clue14_6.show(); 
-    clue14_7.show();
     currentStage = 14;
     break;   
 
@@ -375,6 +303,7 @@ void draw() {
     //Teacher's Desk
 
   case 15:
+  circle = new Circle[0];
     background(img2);
     clicked = 0;
     if (currentStage >0) {
@@ -420,15 +349,25 @@ void draw() {
     pencil.show(); 
     break;
   }
+  for (int i = 0; i<circle.length; i++) {
+    circle[i].display();
+  }
 }
 
 
 void mousePressed() {
+
   println(score);
 
   clicked ++;
+<<<<<<< HEAD
 
   image(circle, mouseX, mouseY, 50, 50);
+=======
+  newCircle = new Circle(mouseX, mouseY);
+  circle = (Circle[])append(circle, newCircle);
+
+>>>>>>> b30677499e92da1bd927b92f60f491783ddb1900
 
   if (button[13].over() && stage == 15) {
     if (stage == 14) {

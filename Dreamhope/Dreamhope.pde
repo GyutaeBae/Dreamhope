@@ -16,7 +16,7 @@ PImage img2, img3_2, img3_13, img3_17, img3_27, img4_4, img4_7, img4_13, img4_18
 
 void setup() {
   size (1600, 1000);
-  next = new Next( 1500, 900, 100, 100);
+  next = new Next(1500, 900, 100, 100);
   phone = new Phone(1265, 370);
   button[0] = new Button(loadImage("1-1.JPG"), loadImage("1-2.JPG"));
   button[1] = new Button(loadImage("2-1.JPG"), loadImage("2-2.JPG"));
@@ -114,7 +114,6 @@ void setup() {
 }
 
 void draw() {
-  println(mouseX, mouseY);
   switch (stage) {
     // Opening
   case 0:

@@ -1,5 +1,4 @@
 class Pencil {
-
   PImage pen;
 
   void show() {

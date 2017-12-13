@@ -12,18 +12,18 @@ class Button {
 
     if (mouseX > 550 && mouseY > 475 && mouseX < 1050 && mouseY < 600) {
       stroke(0);
-      image(button1,550, 475, 500, 125);
+      image(button1, 550, 475, 500, 125);
       noStroke();
-      image(button2,550, 605, 500, 125);
+      image(button2, 550, 605, 500, 125);
     } else if (mouseX > 550 && mouseY > 605 && mouseX < 1050 && mouseY < 730) {
       noStroke();
-      image(button1,550, 475, 500, 125);
+      image(button1, 550, 475, 500, 125);
       stroke(0);
-      image(button2,550, 605, 500, 125);
+      image(button2, 550, 605, 500, 125);
     } else {
       noStroke();
-      image(button1,550, 475, 500, 125);
-      image(button2,550, 605, 500, 125);
+      image(button1, 550, 475, 500, 125);
+      image(button2, 550, 605, 500, 125);
     }
   }
 
@@ -61,10 +61,39 @@ class Next {
   }
 
   boolean over() {
-    if (mouseX > 1550 && mouseY > 950 && mouseX < 1600 && mouseY < 1000) {
+    if (mouseX > 1500 && mouseY > 900 && mouseX < 1600 && mouseY < 1000) {
       return true;
     } else {
       return false;
     }
   }
+}
+
+class Phone {
+  int phoneX;
+  int phoneY;
+  PImage phone = loadImage("phone.png");
+  PImage phone_112 = loadImage("phone_112.png");
+  
+  Phone(int x, int y) {
+    phoneX = x;
+    phoneY = y;
+  }
+  
+  void show() {
+    image(phone, phoneX, phoneY);   
+  }
+  
+  void call() {
+    image(phone_112, phoneX, phoneY);
+  }
+  
+    boolean over() {
+    if (mouseX > 1200 && mouseY > 270 && mouseX < 1520 && mouseY < 670) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
 }
